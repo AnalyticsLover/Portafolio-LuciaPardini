@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucia Pardini</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white transition-colors duration-200">
+    <!-- Header with Navigation -->
+    <header class="fixed w-full bg-gray-900 shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-800" title="Toggle dark mode">
+                <i class="fas fa-moon text-white text-xl"></i>
+            </button>
+            <div class="flex items-center space-x-4">
+                <a href="https://www.linkedin.com/in/lucia-pardini-data-analyst" target="_blank" class="social-icon" title="LinkedIn">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/AnalyticsLover" target="_blank" class="social-icon" title="GitHub">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://public.tableau.com/app/profile/lucia.pardini/vizzes" target="_blank" class="social-icon" title="Tableau">
+                    <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" class="w-5 h-5">
+                </a>
+                <a href="https://www.kaggle.com/luciapardini" target="_blank" class="social-icon" title="Kaggle">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.277.18.041.149.03.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.312z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-900">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="hero-title text-5xl font-bold text-white mb-4 animate-fadeIn" data-translate="name">Lucia Pardini</h2>
+            <p class="text-xl text-gray-300 animate-fadeIn mb-8" data-translate="title">Analista de Datos</p>
+            <div class="language-switch">
+                <button id="languageToggle" class="language-switch-btn">
+                    <span class="switch-label">ES</span>
+                    <span class="switch-label">EN</span>
+                </button>
+            </div>
+            <!-- Add the scroll button -->
+            <div class="scroll-btn-container">
+                <button id="scrollDownBtn" class="scroll-btn" aria-label="Scroll to About section">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 section-fade-in">
+                <div class="md:w-1/2 text-left">
+                    <h2 class="section-title text-3xl font-bold text-white" data-translate="about">Sobre mí</h2>
+                    <div class="space-y-6">
+                        <p class="text-gray-300" data-translate="about_text_1">
+                            Soy una apasionada por aprender cosas nuevas y por resolver problemas.
+                        </p>
+                        <p class="text-gray-300" data-translate="about_text_2">
+                            Desde Excel hasta Python, desde SQL hasta PowerBI, desde Tableau hasta Azure, desde la programación hasta la visualización de datos, desde la ciencia de datos hasta la inteligencia artificial.
+                        </p>
+                        <a href="CV_Lucia_Pardini.pdf" download class="download-cv-btn">
+                            <span data-translate="downloadCV">Descargar CV</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="imagen_cv.jpeg" alt="Lucia Pardini" class="rounded-lg shadow-lg max-w-md w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-900">
+        <div class="container mx-auto px-4 section-fade-in">
+            <h2 class="section-title text-3xl font-bold text-white" data-translate="skills">Aptitudes y Competencias</h2>
+            <div class="skills-grid">
+                <!-- Python Skill -->
+                <div class="skill-container">
+                    <div class="main-skill-bubble">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-points-container">
+                        <span class="mini-bubble">Pandas</span>
+                        <span class="mini-bubble">Numpy</span>
+                        <span class="mini-bubble">Matplotlib</span>
+                        <span class="mini-bubble">Seaborn</span>
+                        <span class="mini-bubble">scikit-learn</span>
+                        <span class="mini-bubble">BeautifulSoup</span>
+                        <span class="mini-bubble">XGBoost</span>
+                    </div>
+                </div>
+
+                <!-- Machine Learning Skill -->
+                <div class="skill-container">
+                    <div class="main-skill-bubble">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-translate="machine_learning">Machine Learning</h3>
+                    <div class="skill-points-container">
+                        <span class="mini-bubble" data-translate="supervised_learning">Supervised Learning</span>
+                        <span class="mini-bubble" data-translate="regression">Regression</span>
+                        <span class="mini-bubble" data-translate="classification">Classification</span>
+                        <span class="mini-bubble" data-translate="logistic_regression">Logistic Regression</span>
+                        <span class="mini-bubble" data-translate="random_forest">Random Forest</span>
+                        <span class="mini-bubble" data-translate="decision_trees">Decision Trees</span>
+                    </div>
+                </div>
+
+                <!-- Databases Skill -->
+                <div class="skill-container">
+                    <div class="main-skill-bubble">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 data-translate="databases">Databases</h3>
+                    <div class="skill-points-container">
+                        <span class="mini-bubble">SQL</span>
+                        <span class="mini-bubble">MySQL</span>
+                        <span class="mini-bubble">Microsoft SQL Server</span>
+                        <span class="mini-bubble">SQLite</span>
+                        <span class="mini-bubble">BigQuery</span>
+                    </div>
+                </div>
+
+                <!-- Excel Skill -->
+                <div class="skill-container" data-skill="excel">
+                    <div class="main-skill-bubble">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel">
+                    </div>
+                    <h3>Excel</h3>
+                    <div class="skill-points-container">
+                        <span class="mini-bubble">VLOOKUP</span>
+                        <span class="mini-bubble" data-translate="pivot_tables">Pivot Tables</span>
+                        <span class="mini-bubble" data-translate="conditional_formatting">Conditional Formatting</span>
+                        <span class="mini-bubble" data-translate="charts">Charts</span>
+                    </div>
+                </div>
+
+                <!-- Tableau Skill -->
+                <div class="skill-container" data-skill="tableau">
+                    <div class="main-skill-bubble">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau">
+                    </div>
+                    <h3>Tableau</h3>
+                    <div class="skill-points-container">
+                        <span class="mini-bubble" data-translate="reports">Reports</span>
+                        <span class="mini-bubble">Dashboards</span>
+                        <span class="mini-bubble">Tableau Public</span>
+                        <span class="mini-bubble" data-translate="visualizations">Visualizations</span>
+                    </div>
+                </div>
+
+                <!-- PowerBI Skill -->
+                <div class="skill-container" data-skill="powerbi">
+                    <div class="main-skill-bubble">
+                        <img src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg" alt="PowerBI">
+                    </div>
+                    <h3>PowerBI</h3>
+                    <div class="skill-points-container">
+                        <span class="mini-bubble">PowerQuery</span>
+                        <span class="mini-bubble">M language</span>
+                        <span class="mini-bubble">Dashboards</span>
+                        <span class="mini-bubble" data-translate="reports">Reports</span>
+                        <span class="mini-bubble">PowerBI Service</span>
+                        <span class="mini-bubble">DAX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-800 relative">
+        <div class="container mx-auto px-4 section-fade-in">
+            <h2 class="section-title text-3xl font-bold text-white" data-translate="projects">Proyectos Personales</h2>
+            <div class="projects-container relative">
+                <div class="projects-wrapper flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-6">
+                    <!-- Project Card 1 -->
+                    <div class="project-card snap-center">
+                        <div class="relative group">
+                            <img src="employee-happiness-benefits.jpg" alt="Project 1" class="project-image rounded-t-lg">
+                            <a href="https://github.com/AnalyticsLover/Oxford-Happiness-Questionnaire-Analysis" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title" data-translate="project1Title">Índice de Felicidad</h3>
+                            <p class="project-description" data-translate="project1Desc">Confección de dos reportes analíticos estudiando los resultados de mas de 150 individuos que fueron encuestados. Un reporte escrito realizado con jupyer notebooks y otro realizado y hosteado en PowerBI y PowerBI Service.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card snap-center">
+                        <div class="relative group">
+                            <img src="Bellabeat-logo.webp" alt="Project 2" class="project-image rounded-t-lg">
+                            <a href="https://github.com/AnalyticsLover/Google-Analytics-Bellabeat-CaseStudy" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title" data-translate="project2Title">Análisis de Produto: Bellabeat</h3>
+                            <p class="project-description" data-translate="project2Desc">Reporte de análisis de datos de uso de productos de Bellabeat para identificar tendencias y proporcionar recomendaciones para la estrategia de marketing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card snap-center">
+                        <div class="relative group">
+                            <img src="project3.jpg" alt="Project 3" class="project-image rounded-t-lg">
+                            <a href="https://github.com/your-project-3" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title" data-translate="project3Title">Análisis de Sentimientos</h3>
+                            <p class="project-description" data-translate="project3Desc">Proyecto de machine learning para análisis de sentimientos en comentarios de redes sociales.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card snap-center">
+                        <div class="relative group">
+                            <img src="project4.jpg" alt="Project 4" class="project-image rounded-t-lg">
+                            <a href="https://github.com/your-project-4" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title" data-translate="project4Title">Automatización con Python</h3>
+                            <p class="project-description" data-translate="project4Desc">Scripts de automatización para procesamiento de datos y generación de reportes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="nav-arrow nav-prev hidden">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-arrow nav-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-900">
+        <div class="container mx-auto text-center px-4 section-fade-in">
+            <h2 class="section-title text-3xl font-bold text-white" data-translate="contact">Contactame</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="flex justify-center space-x-4 mb-8">
+                    <a href="mailto:luciajulianapardini@outlook.com" class="contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span data-translate="sendEmail">enviar email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

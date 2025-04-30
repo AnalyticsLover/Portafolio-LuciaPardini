@@ -179,6 +179,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scroll down button functionality
+const scrollDownBtn = document.getElementById('scrollDownBtn');
+if (scrollDownBtn) {
+    scrollDownBtn.addEventListener('click', () => {
+        const aboutSection = document.querySelector('section:nth-of-type(2)');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+}
+
 // Add animation on scroll
 function handleScrollAnimation() {
     const sections = document.querySelectorAll('.section-fade-in');
@@ -262,14 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScrollAnimation();
 });
 
-// Scroll button functionality
-const scrollBtn = document.getElementById('scrollDownBtn');
-const aboutSection = document.querySelector('section:nth-child(3)'); // About section
-
-scrollBtn.addEventListener('click', () => {
-    aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
 // Hide/show scroll button based on scroll position
 const heroSection = document.querySelector('section:first-child');
 let lastScrollPosition = 0;
@@ -280,9 +286,9 @@ function handleScroll() {
     
     // Add/remove hidden class based on scroll position
     if (currentScrollPosition > heroSectionBottom * 0.5) {
-        scrollBtn.classList.add('hidden');
+        scrollDownBtn.classList.add('hidden');
     } else {
-        scrollBtn.classList.remove('hidden');
+        scrollDownBtn.classList.remove('hidden');
     }
     
     // Update last scroll position

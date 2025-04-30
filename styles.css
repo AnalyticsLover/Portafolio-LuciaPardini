@@ -74,8 +74,21 @@ h1, h2, h3, .hero-title {
     }
 }
 
+@keyframes gentleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
 .animate-fadeIn {
     animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-bounce {
+    animation: gentleBounce 2s infinite ease-in-out;
 }
 
 /* Project card hover effects */
@@ -1126,4 +1139,30 @@ body.light-mode .contact-btn {
 
 body.light-mode .contact-btn:hover {
     background-color: #4B5563;
+}
+
+/* Scroll button styles */
+#scrollDownBtn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#scrollDownBtn i {
+    transition: all 0.3s ease;
+}
+
+#scrollDownBtn:hover i {
+    transform: scale(1.2);
+}
+
+/* Light mode adjustments for scroll button */
+body.light-mode #scrollDownBtn {
+    color: #6b7280;
+}
+
+body.light-mode #scrollDownBtn:hover {
+    color: #1f2937;
 } 

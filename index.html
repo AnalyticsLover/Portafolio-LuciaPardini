@@ -44,12 +44,14 @@
         <div class="container mx-auto text-center px-4">
             <h2 class="hero-title text-5xl font-bold text-white mb-4 animate-fadeIn" data-translate="name">Lucia Pardini</h2>
             <p class="text-xl text-gray-300 animate-fadeIn mb-8" data-translate="title">Analista de Datos</p>
+            <!-- Language switch temporarily disabled
             <div class="language-switch">
                 <button id="languageToggle" class="language-switch-btn">
                     <span class="switch-label" data-lang="es">ES</span>
                     <span class="switch-label" data-lang="en">EN</span>
                 </button>
             </div>
+            -->
             <!-- Scroll Down Button -->
             <div class="flex justify-center mt-12">
                 <button id="scrollDownBtn" class="text-gray-300 hover:text-white transition-all duration-300" aria-label="Scroll to About section">
@@ -212,65 +214,159 @@
     <!-- Projects Section -->
     <section class="min-h-screen flex items-center justify-center bg-gray-800 relative">
         <div class="container mx-auto px-4 section-fade-in">
-            <h2 class="section-title text-3xl font-bold text-white" data-translate="projects">Proyectos Personales</h2>
-            <div class="projects-container relative">
-                <div class="projects-wrapper flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-6">
-                    <!-- Project Card 1 -->
-                    <div class="project-card snap-center">
-                        <div class="relative group">
-                            <img src="employee-happiness-benefits.jpg" alt="Project 1" class="project-image rounded-t-lg">
-                            <a href="https://github.com/AnalyticsLover/Oxford-Happiness-Questionnaire-Analysis" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title" data-translate="project1Title">Índice de Felicidad</h3>
-                            <p class="project-description" data-translate="project1Desc">Confección de dos reportes analíticos estudiando los resultados de mas de 150 individuos que fueron encuestados. Un reporte escrito realizado con jupyer notebooks y otro realizado y hosteado en PowerBI y PowerBI Service.</p>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="project-card snap-center">
-                        <div class="relative group">
-                            <img src="Bellabeat-logo.webp" alt="Project 2" class="project-image rounded-t-lg">
-                            <a href="https://github.com/AnalyticsLover/Google-Analytics-Bellabeat-CaseStudy" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title" data-translate="project2Title">Análisis de Produto: Bellabeat</h3>
-                            <p class="project-description" data-translate="project2Desc">Reporte de análisis de datos de uso de productos de Bellabeat para identificar tendencias y proporcionar recomendaciones para la estrategia de marketing.</p>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 -->
-                    <div class="project-card snap-center">
-                        <div class="relative group">
-                            <img src="project3.jpg" alt="Project 3" class="project-image rounded-t-lg">
-                            <a href="https://github.com/your-project-3" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title" data-translate="project3Title">Análisis de Sentimientos</h3>
-                            <p class="project-description" data-translate="project3Desc">Proyecto de machine learning para análisis de sentimientos en comentarios de redes sociales.</p>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4 -->
-                    <div class="project-card snap-center">
-                        <div class="relative group">
-                            <img src="project4.jpg" alt="Project 4" class="project-image rounded-t-lg">
-                            <a href="https://github.com/your-project-4" target="_blank" class="view-code-btn" data-translate="viewCode">Ver el código</a>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title" data-translate="project4Title">Automatización con Python</h3>
-                            <p class="project-description" data-translate="project4Desc">Scripts de automatización para procesamiento de datos y generación de reportes.</p>
+            <h2 class="section-title text-3xl font-bold text-white mb-12" data-translate="projects">Proyectos Recientes</h2>
+            
+            <div class="timeline-container">
+                <!-- Project 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content right">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="hidrocarburos.png" alt="Project 2" class="project-image">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Dashboard Hidrocarburos en Argentina</h3>
+                                <p class="project-description">Dashboard interactivo confeccionado en Power BI sobre la industria de hidrocarburos en Argentina, diseñado para visualizar y analizar datos oficiales de producción, pozos y fracturas, obtenidos de datos.gob.ar. </p>
+                                <div class="project-tools">
+                                    <img src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg" alt="PowerBI" title="PowerBI">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/html5.svg" alt="HTML" title="HTML">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/git.svg" alt="Git" title="Git">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="Github" title="Github">
+                                </div>
+                                <div class="project-buttons">
+                                    <a href="https://github.com/AnalyticsLover/Dashboard-Hidrocarburos-Arg" target="_blank" class="view-project-btn">
+                                        <span>Ver código</span>
+                                        <i class="fas fa-code"></i>
+                                    </a>
+                                    <a href="https://analyticslover.github.io/Dashboard-Hidrocarburos-Arg/" target="_blank" class="view-project-btn">
+                                        <span>Ver Dashboard</span>
+                                        <i class="fas fa-chart-line"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Navigation Arrows -->
-                <button class="nav-arrow nav-prev hidden">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="nav-arrow nav-next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <!-- Project 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content left">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="employee-happiness-benefits.jpg" alt="Project 1" class="project-image">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Índice de Felicidad</h3>
+                                <p class="project-description">Confección de dos reportes analíticos, uno privado realizado en PowerBI y otro publico realizado con Google Colab, estudiando los resultados de mas de 150 individuos que realizaron el Oxford Hapiness Questionnaire.</p>
+                                <div class="project-tools">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" title="Python">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/pandas.svg" alt="Pandas" title="Pandas">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/googlecolab.svg" alt="Colab" title="Colab">
+                                    <img src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg" alt="PowerBI" title="PowerBI">
+                                </div>
+                                <div class="project-buttons">
+                                    <a href="https://github.com/AnalyticsLover/Oxford-Happiness-Questionnaire-Analysis" target="_blank" class="view-project-btn">
+                                        <span>Ver código</span>
+                                        <i class="fas fa-code"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content right">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="turnover-hhrr.jpg" alt="Project 2" class="project-image">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Análisis y Predicción de Rotacion de Personal</h3>
+                                <p class="project-description">Proyecto que combina análisis exploratorio de datos con machine learning para entender los factores que inciden en la rotación de empleados. Se utilizaron diversas librerias de Python para el análisis visual y para desarrollar un modelo de clasificación capaz de predecir la permanencia o salida de un empleado, evaluado con matriz de confusión. Reporte escrito en Inglés.</p>
+                                <div class="project-tools">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" title="Python">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/pandas.svg" alt="Pandas" title="Pandas">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/googlecolab.svg" alt="Colab" title="Colab">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/scikitlearn.svg" alt="Scikit-Learn" title="Scikit-Learn">
+                                </div>
+                                <div class="project-buttons">
+                                    <a href="https://github.com/AnalyticsLover/Salifort-Motors-Turnover-Project" target="_blank" class="view-project-btn">
+                                        <span>Ver código</span>
+                                        <i class="fas fa-code"></i>
+                                    </a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content left">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="fitbit.jpg" alt="Project 2" class="project-image">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Análisis de Produto: Fitbit</h3>
+                                <p class="project-description">Reporte de análisis de datos de uso de productos de Fitbit para identificar tendencias y proporcionar recomendaciones para la estrategia de marketing de Bellabeat.  Reporte analítico escrito en Inglés.</p>
+                                <div class="project-tools">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" title="Python">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/r.svg" alt="R" title="R">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/sqlite.svg" alt="SQLite3" title="SQLite3">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tableau.svg" alt="Tableau" title="Tableau">
+                                </div>
+                                <div class="project-buttons">
+                                    <a href="https://github.com/AnalyticsLover/Google-Analytics-Bellabeat-CaseStudy" target="_blank" class="view-project-btn">
+                                        <span>Ver código</span>
+                                        <i class="fas fa-code"></i>
+                                    </a>
+                                    <a href="https://public.tableau.com/app/profile/lucia.pardini/viz/Bellabeat_CaseStudy_17255811286620/FitnessSmartDeviceData" target="_blank" class="view-project-btn">
+                                        <span>Ver Dashboard</span>
+                                        <i class="fas fa-chart-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content right">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="japon.jpg" alt="Project 4" class="project-image">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Dashboard: Ventas de tiendas locales en Japón</h3>
+                                <p class="project-description">Liempeza y analisis de los datos extraidos de kaggle.com. Elaboracion de un dashboard realizado con pythony stramlit.</p>
+                                <div class="project-tools">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" title="Python">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/pandas.svg" alt="Pandas" title="Pandas">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/streamlit.svg" alt="Streamlit" title="Streamlit">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jupyter.svg" alt="jupyter" title="jupyter">
+                                </div>
+                                <a href="https://github.com/AnalyticsLover/Sales-Python-Dashboard" target="_blank" class="view-project-btn">
+                                    <span>Ver Código</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://ventas-japon-2023-dashboard.streamlit.app/" target="_blank" class="view-project-btn">
+                                    <span>Ver Dashboard</span>
+                                    <i class="fas fa-chart-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

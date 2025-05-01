@@ -1,4 +1,5 @@
-// Language translations
+// Language translations - temporarily disabled
+/*
 const translations = {
     en: {
         name: "Lucia Pardini",
@@ -99,55 +100,12 @@ const translations = {
 // Current language state
 let currentLang = 'es'; // Default to Spanish
 
-// Dark mode state
-let isDarkMode = true; // Default to dark mode
-
-// DOM Elements
-const darkModeToggle = document.getElementById('darkModeToggle');
-const languageToggle = document.getElementById('languageToggle');
-const body = document.body;
-const languageText = document.getElementById('language-text');
-
-// Initialize theme from localStorage
-function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        isDarkMode = false;
-        body.classList.add('light-mode');
-        updateDarkModeIcon(isDarkMode);
-    }
-}
-
 // Initialize language from localStorage
 function initializeLanguage() {
     const savedLang = localStorage.getItem('language');
     if (savedLang) {
         currentLang = savedLang;
         updateLanguage(currentLang === 'en');
-    }
-}
-
-// Toggle dark mode
-function toggleDarkMode() {
-    isDarkMode = !isDarkMode;
-    body.classList.toggle('light-mode');
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    updateDarkModeIcon(isDarkMode);
-}
-
-// Update dark mode icon
-function updateDarkModeIcon(isDarkMode) {
-    const icon = darkModeToggle.querySelector('i');
-    if (isDarkMode) {
-        // In dark mode, show sun icon (white)
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        darkModeToggle.title = 'Switch to light mode';
-    } else {
-        // In light mode, show moon icon (black)
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        darkModeToggle.title = 'Switch to dark mode';
     }
 }
 
@@ -195,6 +153,57 @@ function updateContent() {
     document.querySelectorAll('.certificate-card').forEach(card => {
         card.setAttribute('data-tooltip', translations[currentLang]['go_to_certificate']);
     });
+}
+*/
+
+// Dark mode state
+let isDarkMode = true; // Default to dark mode
+
+// DOM Elements
+const darkModeToggle = document.getElementById('darkModeToggle');
+// const languageToggle = document.getElementById('languageToggle'); // Temporarily disabled
+const body = document.body;
+// const languageText = document.getElementById('language-text'); // Temporarily disabled
+
+// Initialize theme from localStorage
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        isDarkMode = false;
+        body.classList.add('light-mode');
+        updateDarkModeIcon(isDarkMode);
+    }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTheme();
+    // initializeLanguage(); // Temporarily disabled
+    handleScrollAnimation();
+});
+
+// Toggle dark mode
+function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    updateDarkModeIcon(isDarkMode);
+}
+
+// Update dark mode icon
+function updateDarkModeIcon(isDarkMode) {
+    const icon = darkModeToggle.querySelector('i');
+    if (isDarkMode) {
+        // In dark mode, show sun icon (white)
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        darkModeToggle.title = 'Switch to light mode';
+    } else {
+        // In light mode, show moon icon (black)
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        darkModeToggle.title = 'Switch to dark mode';
+    }
 }
 
 // Add smooth scroll behavior
@@ -247,7 +256,7 @@ function handleScrollAnimation() {
 
 // Event listeners
 darkModeToggle.addEventListener('click', toggleDarkMode);
-languageToggle.addEventListener('click', toggleLanguage);
+// languageToggle.addEventListener('click', toggleLanguage); // Temporarily disabled
 window.addEventListener('scroll', handleScrollAnimation);
 
 // Contact form handling
@@ -300,13 +309,6 @@ projectsWrapper.addEventListener('scroll', updateNavigationButtons);
 
 // Initialize navigation buttons on load
 window.addEventListener('load', updateNavigationButtons);
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    initializeTheme();
-    initializeLanguage();
-    handleScrollAnimation();
-});
 
 // Hide/show scroll button based on scroll position
 const heroSection = document.querySelector('section:first-child');

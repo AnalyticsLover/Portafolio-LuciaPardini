@@ -1165,4 +1165,87 @@ body.light-mode #scrollDownBtn {
 
 body.light-mode #scrollDownBtn:hover {
     color: #1f2937;
+}
+
+/* Certificates Section */
+.certificates-section {
+    position: relative;
+    width: 100%;
+}
+
+.certificate-card {
+    position: relative;
+    overflow: visible;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+    max-width: 110px;
+    max-height: 110px;
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.certificate-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0.25rem;
+}
+
+.certificate-card:hover::after {
+    opacity: 1;
+}
+
+.certificate-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Certificate Tooltip */
+.certificate-card::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.certificate-card:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Light mode adjustments */
+body.light-mode .certificates-section h3 {
+    color: #1f2937;
+}
+
+body.light-mode .certificate-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .certificate-card::before {
+    background-color: rgba(31, 41, 55, 0.9);
 } 

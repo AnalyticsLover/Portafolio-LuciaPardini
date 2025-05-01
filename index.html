@@ -46,8 +46,8 @@
             <p class="text-xl text-gray-300 animate-fadeIn mb-8" data-translate="title">Analista de Datos</p>
             <div class="language-switch">
                 <button id="languageToggle" class="language-switch-btn">
-                    <span class="switch-label">ES</span>
-                    <span class="switch-label">EN</span>
+                    <span class="switch-label" data-lang="es">ES</span>
+                    <span class="switch-label" data-lang="en">EN</span>
                 </button>
             </div>
             <!-- Scroll Down Button -->
@@ -67,10 +67,14 @@
                     <h2 class="section-title text-3xl font-bold text-white" data-translate="about">Sobre mí</h2>
                     <div class="space-y-6">
                         <p class="text-gray-300" data-translate="about_text_1">
-                            Soy una apasionada por aprender cosas nuevas y por resolver problemas.
+                            Soy Lucía Pardini, analista de datos con pasado en la cocina profesional. Hace un par de años colgué el delantal y me metí de lleno en el mundo tech.
                         </p>
                         <p class="text-gray-300" data-translate="about_text_2">
-                            Desde Excel hasta Python, desde SQL hasta PowerBI, desde Tableau hasta Azure, desde la programación hasta la visualización de datos, desde la ciencia de datos hasta la inteligencia artificial.
+                            Mi trayectoria, marcada por una formación inicial en gastronomía, me enseñó a mezclar precisión con creatividad: así como un plato requiere equilibrio entre sabor y aspecto, el análisis de datos demanda conocimiento técnico, diseño y una visión innovadora ... 
+                            Hoy traduzco datos en historias claras y accionables. Me especializo en Power BI (certificada), y también trabajo con Python, SQL, Tableau y más.
+                        </p>
+                        <p class="text-gray-300" data-translate="about_text_3">
+                            Actualmente sigo aplicando la precisión de la gastronomía a cada visualización: un dashboard, como un buen plato, debe estar bien balanceado, ser fácil de digerir… y dejar una buena impresión.
                         </p>
                         <a href="CV_Lucia_Pardini.pdf" download class="download-cv-btn">
                             <span data-translate="downloadCV">Descargar CV</span>
@@ -78,8 +82,28 @@
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="imagen_cv.jpeg" alt="Lucia Pardini" class="rounded-lg shadow-lg max-w-md w-full h-auto">
+                <div class="md:w-1/2 flex flex-col items-center">
+                    <img src="headshot.jpg" alt="Lucia Pardini" class="rounded-lg shadow-lg max-w-md w-full h-auto mb-8">
+                    <!-- Certificates Section -->
+                    <div class="certificates-section w-full max-w-md">
+                        <h3 class="text-xl font-semibold text-white mb-4 text-center" data-translate="certificates">Certificados</h3>
+                        <div class="grid grid-cols-3 gap-1.5 justify-items-center">
+                            <a href="https://learn.microsoft.com/en-us/users/luciajulianapardini-5544/credentials/fe127f4a59d0278f" target="_blank" class="certificate-card group" data-tooltip="Go to certificate">
+                                <img src="cert_image.webp" alt="Power BI Certification" class="w-full h-full object-cover rounded-sm shadow-lg transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-sm"></div>
+                            </a>
+                            
+                            <a href="https://www.credly.com/badges/bc5bb706-e837-4c57-be75-8666379f58d3" target="_blank" class="certificate-card group" data-tooltip="Go to certificate">
+                                <img src="google-advanced-data-analytics-certificate.png" alt="Google Certification" class="w-full h-full object-cover rounded-sm shadow-lg transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-sm"></div>
+                            </a>
+                            
+                            <a href="https://www.credly.com/badges/16ec7be0-4ca7-49b2-9392-3ddbbcd26b3e/print" target="_blank" class="certificate-card group" data-tooltip="Go to certificate">
+                                <img src="cert_1.PNG" alt="Coursera certificate" class="w-full h-full object-cover rounded-sm shadow-lg transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-sm"></div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

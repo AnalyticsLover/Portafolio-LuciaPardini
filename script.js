@@ -4,8 +4,9 @@ const translations = {
         name: "Lucia Pardini",
         title: "Data Analyst",
         about: "About Me",
-        about_text_1: "I am passionate about learning new things and solving problems.",
-        about_text_2: "From Excel to Python, from SQL to PowerBI, from Tableau to Azure, from programming to data visualization, from data science to artificial intelligence.",
+        about_text_1: "I am Lucía Pardini, a data analyst with a background in professional cooking. A couple of years ago, I hung up my apron and fully immersed myself in the tech world.",
+        about_text_2: "My journey, marked by an initial training in gastronomy, taught me to mix precision with creativity: just as a dish requires a balance between flavor and appearance, data analysis demands technical knowledge, design, and an innovative vision... Today I translate data into clear and actionable stories. I specialize in Power BI (certified), and also work with Python, SQL, Tableau, and more.",
+        about_text_3: "Currently, I continue to apply the precision of gastronomy to each visualization: a dashboard, like a good dish, must be well balanced, easy to digest... and leave a good impression.",
         skills: "Skills and Competencies",
         projects: "Personal Projects",
         contact: "Contact Me",
@@ -40,14 +41,19 @@ const translations = {
         classification: "Classification",
         logistic_regression: "Logistic Regression",
         random_forest: "Random Forest",
-        decision_trees: "Decision Trees"
+        decision_trees: "Decision Trees",
+        experience: "Experience",
+        education: "Education",
+        certificates: "Certificates",
+        go_to_certificate: "Go to certificate"
     },
     es: {
         name: "Lucia Pardini",
         title: "Analista de Datos",
         about: "Sobre mí",
-        about_text_1: "Soy una apasionada por aprender cosas nuevas y por resolver problemas.",
-        about_text_2: "Desde Excel hasta Python, desde SQL hasta PowerBI, desde Tableau hasta Azure, desde la programación hasta la visualización de datos, desde la ciencia de datos hasta la inteligencia artificial.",
+        about_text_1: "Soy Lucía Pardini, analista de datos con pasado en la cocina profesional. Hace un par de años colgué el delantal y me metí de lleno en el mundo tech.",
+        about_text_2: "Mi trayectoria, marcada por una formación inicial en gastronomía, me enseñó a mezclar precisión con creatividad: así como un plato requiere equilibrio entre sabor y aspecto, el análisis de datos demanda conocimiento técnico, diseño y una visión innovadora... Hoy traduzco datos en historias claras y accionables. Me especializo en Power BI (certificada), y también trabajo con Python, SQL, Tableau y más.",
+        about_text_3: "Actualmente sigo aplicando la precisión de la gastronomía a cada visualización: un dashboard, como un buen plato, debe estar bien balanceado, ser fácil de digerir… y dejar una buena impresión.",
         skills: "Aptitudes y Competencias",
         projects: "Proyectos Personales",
         contact: "Contáctame",
@@ -82,7 +88,11 @@ const translations = {
         classification: "Clasificación",
         logistic_regression: "Regresión Logística",
         random_forest: "Bosques Aleatorios",
-        decision_trees: "Árboles de Decisión"
+        decision_trees: "Árboles de Decisión",
+        experience: "Experiencia",
+        education: "Educación",
+        certificates: "Certificados",
+        go_to_certificate: "Ir a certificado"
     }
 };
 
@@ -96,6 +106,7 @@ let isDarkMode = true; // Default to dark mode
 const darkModeToggle = document.getElementById('darkModeToggle');
 const languageToggle = document.getElementById('languageToggle');
 const body = document.body;
+const languageText = document.getElementById('language-text');
 
 // Initialize theme from localStorage
 function initializeTheme() {
@@ -110,10 +121,9 @@ function initializeTheme() {
 // Initialize language from localStorage
 function initializeLanguage() {
     const savedLang = localStorage.getItem('language');
-    if (savedLang && (savedLang === 'en' || savedLang === 'es')) {
+    if (savedLang) {
         currentLang = savedLang;
-        updateLanguageSwitch();
-        updateContent();
+        updateLanguage(currentLang === 'en');
     }
 }
 
@@ -145,8 +155,25 @@ function updateDarkModeIcon(isDarkMode) {
 function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'es' : 'en';
     localStorage.setItem('language', currentLang);
-    updateLanguageSwitch();
-    updateContent();
+    updateLanguage(currentLang === 'en');
+}
+
+// Update language
+function updateLanguage(isEnglish) {
+    const lang = isEnglish ? 'en' : 'es';
+    
+    // Update all elements with data-translate attribute
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+
+    // Update certificate tooltips
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        card.setAttribute('data-tooltip', translations[lang]['go_to_certificate']);
+    });
 }
 
 // Update language switch appearance
@@ -162,6 +189,11 @@ function updateContent() {
         if (translations[currentLang][key]) {
             element.textContent = translations[currentLang][key];
         }
+    });
+
+    // Update certificate tooltips
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        card.setAttribute('data-tooltip', translations[currentLang]['go_to_certificate']);
     });
 }
 

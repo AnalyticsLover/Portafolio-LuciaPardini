@@ -52,8 +52,7 @@ window.addEventListener('load', function() {
     }
 });
 
-// Language translations - temporarily disabled
-/*
+// Language translations
 const translations = {
     en: {
         name: "Lucia Pardini",
@@ -63,44 +62,33 @@ const translations = {
         about_text_2: "My journey, marked by an initial training in gastronomy, taught me to mix precision with creativity: just as a dish requires a balance between flavor and appearance, data analysis demands technical knowledge, design, and an innovative vision... Today I translate data into clear and actionable stories. I specialize in Power BI (certified), and also work with Python, SQL, Tableau, and more.",
         about_text_3: "Currently, I continue to apply the precision of gastronomy to each visualization: a dashboard, like a good dish, must be well balanced, easy to digest... and leave a good impression.",
         skills: "Skills and Competencies",
-        projects: "Personal Projects",
+        projects: "Recent Projects",
         contact: "Contact Me",
         sendEmail: "Send Email",
-        python: "Python",
-        sql: "SQL",
-        powerbi: "PowerBI",
-        tableau: "Tableau",
-        excel: "Excel",
-        azure: "Azure",
-        english: "English (B2)",
         downloadCV: "Download Resume",
         viewCode: "See the code",
-        project1Title: "Happiness Index",
-        project1Desc: "Creation of two analytical reports studying the results of more than 150 surveyed individuals. A written report made with Jupyter notebooks and another hosted in PowerBI and PowerBI Service.",
-        project2Title: "Product Analysis: Bellabeat",
-        project2Desc: "Interactive dashboard created in PowerBI to visualize key sales and performance metrics.",
-        project3Title: "Sentiment Analysis",
-        project3Desc: "Machine learning project for sentiment analysis on social media comments.",
-        project4Title: "Python Automation",
-        project4Desc: "Automation scripts for data processing and report generation.",
-        skills: "Skills and Competencies",
-        databases: "Databases",
-        machine_learning: "Machine Learning",
-        pivot_tables: "Pivot Tables",
-        conditional_formatting: "Conditional Formatting",
-        charts: "Charts",
-        reports: "Reports",
-        visualizations: "Visualizations",
-        supervised_learning: "Supervised Learning",
-        regression: "Regression",
-        classification: "Classification",
-        logistic_regression: "Logistic Regression",
-        random_forest: "Random Forest",
-        decision_trees: "Decision Trees",
-        experience: "Experience",
-        education: "Education",
         certificates: "Certificates",
-        go_to_certificate: "Go to certificate"
+        go_to_certificate: "Go to certificate",
+        dark_mode_tooltip: "Toggle to dark mode",
+        light_mode_tooltip: "Toggle to light mode",
+        // Project 1
+        project1_title: "Hydrocarbons Dashboard in Argentina",
+        project1_description: "Interactive dashboard created in Power BI about the hydrocarbons industry in Argentina, designed to visualize and analyze official data on production, wells, and fractures, obtained from datos.gob.ar.",
+        view_code: "View Code",
+        view_dashboard: "View Dashboard",
+        // Project 2
+        project2_title: "Happiness Index",
+        project2_description: "Creation of two analytical reports, one private made in PowerBI and another public made with Google Colab, studying the results of more than 150 individuals who took the Oxford Happiness Questionnaire.",
+        // Project 3
+        project3_title: "Employee Turnover Analysis and Prediction",
+        project3_description: "Project that combines exploratory data analysis with machine learning to understand the factors that affect employee turnover. Various Python libraries were used for visual analysis and to develop a classification model capable of predicting employee retention or departure, evaluated with a confusion matrix. Report written in English.",
+        // Project 4
+        project4_title: "Product Analysis: Fitbit",
+        project4_description: "Analysis report of Fitbit product usage data to identify trends and provide recommendations for Bellabeat's marketing strategy. Analytical report written in English.",
+        // Project 5
+        project5_title: "Sales Dashboard: Local Stores in Japan",
+        project5_description: "Cleaning and analysis of data extracted from kaggle.com. Creation of a dashboard made with Python and Streamlit.",
+        // Add all other translations here
     },
     es: {
         name: "Lucia Pardini",
@@ -110,70 +98,55 @@ const translations = {
         about_text_2: "Mi trayectoria, marcada por una formación inicial en gastronomía, me enseñó a mezclar precisión con creatividad: así como un plato requiere equilibrio entre sabor y aspecto, el análisis de datos demanda conocimiento técnico, diseño y una visión innovadora... Hoy traduzco datos en historias claras y accionables. Me especializo en Power BI (certificada), y también trabajo con Python, SQL, Tableau y más.",
         about_text_3: "Actualmente sigo aplicando la precisión de la gastronomía a cada visualización: un dashboard, como un buen plato, debe estar bien balanceado, ser fácil de digerir… y dejar una buena impresión.",
         skills: "Aptitudes y Competencias",
-        projects: "Proyectos Personales",
+        projects: "Proyectos Recientes",
         contact: "Contáctame",
         sendEmail: "Enviar Email",
-        python: "Python",
-        sql: "SQL",
-        powerbi: "PowerBI",
-        tableau: "Tableau",
-        excel: "Excel",
-        azure: "Azure",
-        english: "Inglés (B2)",
         downloadCV: "Descargar CV",
         viewCode: "Ver el código",
-        project1Title: "Índice de Felicidad",
-        project1Desc: "Confección de dos reportes analíticos estudiando los resultados de mas de 150 individuos que fueron encuestados. Un reporte escrito realizado con jupyer notebooks y otro realizado y hosteado en PowerBI y PowerBI Service.",
-        project2Title: "Análisis de Produto: Bellabeat",
-        project2Desc: "Dashboard interactivo creado en PowerBI para visualizar métricas clave de ventas y rendimiento.",
-        project3Title: "Análisis de Sentimientos",
-        project3Desc: "Proyecto de machine learning para análisis de sentimientos en comentarios de redes sociales.",
-        project4Title: "Automatización con Python",
-        project4Desc: "Scripts de automatización para procesamiento de datos y generación de reportes.",
-        skills: "Aptitudes y Competencias",
-        databases: "Bases de Datos",
-        machine_learning: "Aprendizaje Automático",
-        pivot_tables: "Tablas Dinámicas",
-        conditional_formatting: "Formato Condicional",
-        charts: "Gráficos",
-        reports: "Informes",
-        visualizations: "Visualizaciones",
-        supervised_learning: "Aprendizaje Supervisado",
-        regression: "Regresión",
-        classification: "Clasificación",
-        logistic_regression: "Regresión Logística",
-        random_forest: "Bosques Aleatorios",
-        decision_trees: "Árboles de Decisión",
-        experience: "Experiencia",
-        education: "Educación",
         certificates: "Certificados",
-        go_to_certificate: "Ir a certificado"
+        go_to_certificate: "Ir a certificado",
+        dark_mode_tooltip: "Cambiar a modo oscuro",
+        light_mode_tooltip: "Cambiar a modo claro",
+        // Project 1
+        project1_title: "Dashboard Hidrocarburos en Argentina",
+        project1_description: "Dashboard interactivo confeccionado en Power BI sobre la industria de hidrocarburos en Argentina, diseñado para visualizar y analizar datos oficiales de producción, pozos y fracturas, obtenidos de datos.gob.ar.",
+        view_code: "Ver código",
+        view_dashboard: "Ver Dashboard",
+        // Project 2
+        project2_title: "Índice de Felicidad",
+        project2_description: "Confección de dos reportes analíticos, uno privado realizado en PowerBI y otro publico realizado con Google Colab, estudiando los resultados de mas de 150 individuos que realizaron el Oxford Hapiness Questionnaire.",
+        // Project 3
+        project3_title: "Análisis y Predicción de Rotacion de Personal",
+        project3_description: "Proyecto que combina análisis exploratorio de datos con machine learning para entender los factores que inciden en la rotación de empleados. Se utilizaron diversas librerias de Python para el análisis visual y para desarrollar un modelo de clasificación capaz de predecir la permanencia o salida de un empleado, evaluado con matriz de confusión. Reporte escrito en Inglés.",
+        // Project 4
+        project4_title: "Análisis de Produto: Fitbit",
+        project4_description: "Reporte de análisis de datos de uso de productos de Fitbit para identificar tendencias y proporcionar recomendaciones para la estrategia de marketing de Bellabeat. Reporte analítico escrito en Inglés.",
+        // Project 5
+        project5_description: "Limpieza y analisis de los datos extraidos de kaggle.com. Elaboracion de un dashboard realizado con pythony stramlit.",
+        // Add all other translations here
     }
 };
 
 // Current language state
 let currentLang = 'es'; // Default to Spanish
 
+// DOM Elements
+const languageToggle = document.getElementById('languageToggle');
+const currentLangSpan = document.querySelector('.current-lang');
+const languageOptions = document.querySelectorAll('.language-option');
+
 // Initialize language from localStorage
 function initializeLanguage() {
     const savedLang = localStorage.getItem('language');
     if (savedLang) {
         currentLang = savedLang;
-        updateLanguage(currentLang === 'en');
+        updateLanguage(currentLang);
     }
-}
-
-// Toggle language
-function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'es' : 'en';
-    localStorage.setItem('language', currentLang);
-    updateLanguage(currentLang === 'en');
+    updateLanguageUI();
 }
 
 // Update language
-function updateLanguage(isEnglish) {
-    const lang = isEnglish ? 'en' : 'es';
-    
+function updateLanguage(lang) {
     // Update all elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
@@ -186,53 +159,74 @@ function updateLanguage(isEnglish) {
     document.querySelectorAll('.certificate-card').forEach(card => {
         card.setAttribute('data-tooltip', translations[lang]['go_to_certificate']);
     });
+
+    // Update dark mode toggle tooltip without changing the icon
+    const icon = darkModeToggle.querySelector('i');
+    if (isDarkMode) {
+        darkModeToggle.title = translations[lang]['light_mode_tooltip'];
+    } else {
+        darkModeToggle.title = translations[lang]['dark_mode_tooltip'];
+    }
+
+    // Save language preference
+    localStorage.setItem('language', lang);
+    currentLang = lang;
 }
 
-// Update language switch appearance
-function updateLanguageSwitch() {
-    languageToggle.setAttribute('data-lang', currentLang);
-}
-
-// Update content based on current language
-function updateContent() {
-    // Update text content using translations
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[currentLang][key]) {
-            element.textContent = translations[currentLang][key];
+// Update language UI elements
+function updateLanguageUI() {
+    // Update current language display
+    currentLangSpan.textContent = currentLang.toUpperCase();
+    
+    // Update active state of language options
+    languageOptions.forEach(option => {
+        if (option.getAttribute('data-lang') === currentLang) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
         }
     });
-
-    // Update certificate tooltips
-    document.querySelectorAll('.certificate-card').forEach(card => {
-        card.setAttribute('data-tooltip', translations[currentLang]['go_to_certificate']);
-    });
 }
-*/
+
+// Event Listeners
+languageOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+        updateLanguage(lang);
+        updateLanguageUI();
+    });
+});
+
+// Initialize language system
+document.addEventListener('DOMContentLoaded', () => {
+    initializeLanguage();
+    // ... rest of your initialization code ...
+});
 
 // Dark mode state
-let isDarkMode = true; // Default to dark mode
+let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 // DOM Elements
 const darkModeToggle = document.getElementById('darkModeToggle');
-// const languageToggle = document.getElementById('languageToggle'); // Temporarily disabled
 const body = document.body;
-// const languageText = document.getElementById('language-text'); // Temporarily disabled
 
-// Initialize theme from localStorage
+// Initialize theme
 function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        isDarkMode = false;
+    // Always start with system preference
+    isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Apply the theme
+    if (!isDarkMode) {
         body.classList.add('light-mode');
-        updateDarkModeIcon(isDarkMode);
     }
+    
+    // Update the icon and tooltip
+    updateDarkModeIcon(isDarkMode);
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initializeTheme();
-    // initializeLanguage(); // Temporarily disabled
     handleScrollAnimation();
 });
 
@@ -251,12 +245,12 @@ function updateDarkModeIcon(isDarkMode) {
         // In dark mode, show sun icon (white)
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
-        darkModeToggle.title = 'Switch to light mode';
+        darkModeToggle.title = translations[currentLang]['light_mode_tooltip'];
     } else {
         // In light mode, show moon icon (black)
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
-        darkModeToggle.title = 'Switch to dark mode';
+        darkModeToggle.title = translations[currentLang]['dark_mode_tooltip'];
     }
 }
 

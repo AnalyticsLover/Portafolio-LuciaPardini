@@ -8,12 +8,14 @@ class ParticleAnimation {
         this.isVisible = true;
         
         // Configuration
-        this.particleCount = 50;
-        this.particleColor = this.isDarkMode ? '#ccc' : '#444';
-        this.particleSize = 2;
-        this.particleSpeed = 0.5;
-        this.connectionDistance = 100;
-        this.connectionOpacity = 0.2;
+        this.particleCount = 45;
+        this.particleColor = this.isDarkMode ? '#ffffff' : '#000000';
+        this.particleSize = 3;
+        this.particleSpeed = 0.3;
+        this.connectionDistance = 200;
+        this.connectionOpacity = 0.6;
+        this.particleOpacity = 1;
+        this.glowSize = 4;
 
         // Bind methods
         this.init = this.init.bind(this);
@@ -36,7 +38,9 @@ class ParticleAnimation {
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
                 vx: (Math.random() - 0.5) * this.particleSpeed,
-                vy: (Math.random() - 0.5) * this.particleSpeed
+                vy: (Math.random() - 0.5) * this.particleSpeed,
+                size: Math.random() * 1.5 + this.particleSize,
+                baseSize: Math.random() * 1.5 + this.particleSize
             });
         }
 
@@ -78,7 +82,7 @@ class ParticleAnimation {
         // Wait for the theme class to be applied
         setTimeout(() => {
             this.isDarkMode = document.body.classList.contains('light-mode') ? false : true;
-            this.particleColor = this.isDarkMode ? '#ccc' : '#444';
+            this.particleColor = this.isDarkMode ? '#ffffff' : '#000000';
         }, 100);
     }
 
@@ -93,27 +97,51 @@ class ParticleAnimation {
             particle.x += particle.vx;
             particle.y += particle.vy;
 
-            // Bounce off edges
-            if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
-            if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
+            // Add subtle pulsing effect
+            const time = Date.now() * 0.001;
+            particle.size = particle.baseSize + Math.sin(time + index) * 0.5;
 
-            // Draw particle
+            // Bounce off edges with slight randomization
+            if (particle.x < 0 || particle.x > this.canvas.width) {
+                particle.vx *= -1;
+                particle.x = Math.max(0, Math.min(particle.x, this.canvas.width));
+            }
+            if (particle.y < 0 || particle.y > this.canvas.height) {
+                particle.vy *= -1;
+                particle.y = Math.max(0, Math.min(particle.y, this.canvas.height));
+            }
+
+            // Draw particle with enhanced glow effect
             this.ctx.beginPath();
-            this.ctx.arc(particle.x, particle.y, this.particleSize, 0, Math.PI * 2);
-            this.ctx.fillStyle = this.particleColor;
+            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            
+            // Create enhanced gradient for particle
+            const gradient = this.ctx.createRadialGradient(
+                particle.x, particle.y, 0,
+                particle.x, particle.y, particle.size * this.glowSize
+            );
+            gradient.addColorStop(0, this.particleColor);
+            gradient.addColorStop(0.4, `${this.particleColor}80`);
+            gradient.addColorStop(1, 'transparent');
+            
+            this.ctx.fillStyle = gradient;
             this.ctx.fill();
 
-            // Draw connections
+            // Draw connections with dynamic opacity based on distance
             for (let j = index + 1; j < this.particles.length; j++) {
                 const dx = particle.x - this.particles[j].x;
                 const dy = particle.y - this.particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < this.connectionDistance) {
+                    // Calculate opacity based on distance with enhanced visibility
+                    const opacity = Math.pow(1 - distance / this.connectionDistance, 2) * this.connectionOpacity;
+                    
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                    this.ctx.strokeStyle = `${this.particleColor}${Math.floor(this.connectionOpacity * 255).toString(16).padStart(2, '0')}`;
+                    this.ctx.strokeStyle = `${this.particleColor}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
+                    this.ctx.lineWidth = 1.5;
                     this.ctx.stroke();
                 }
             }

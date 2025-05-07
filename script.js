@@ -135,13 +135,14 @@ const languageToggle = document.getElementById('languageToggle');
 const currentLangSpan = document.querySelector('.current-lang');
 const languageOptions = document.querySelectorAll('.language-option');
 
-// Initialize language from localStorage
+// Initialize language
 function initializeLanguage() {
-    const savedLang = localStorage.getItem('language');
-    if (savedLang) {
-        currentLang = savedLang;
-        updateLanguage(currentLang);
-    }
+    // Force Spanish as initial language
+    currentLang = 'es';
+    localStorage.setItem('language', 'es');
+    
+    // Update UI and content
+    updateLanguage(currentLang);
     updateLanguageUI();
 }
 
@@ -199,8 +200,14 @@ languageOptions.forEach(option => {
 
 // Initialize language system
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize language first
     initializeLanguage();
-    // ... rest of your initialization code ...
+    
+    // Then initialize theme
+    initializeTheme();
+    
+    // Finally set up scroll animations
+    handleScrollAnimation();
 });
 
 // Dark mode state
@@ -223,12 +230,6 @@ function initializeTheme() {
     // Update the icon and tooltip
     updateDarkModeIcon(isDarkMode);
 }
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    initializeTheme();
-    handleScrollAnimation();
-});
 
 // Toggle dark mode
 function toggleDarkMode() {

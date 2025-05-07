@@ -1598,7 +1598,7 @@ body.light-mode .project-tools img:hover {
         max-width: 100%;
         padding: 0.5rem;
     }
-}
+} 
 
 /* Particle Canvas Styles */
 #particleCanvas {
@@ -1617,4 +1617,60 @@ body.light-mode .project-tools img:hover {
 .hero-section > *:not(#particleCanvas) {
     position: relative;
     z-index: 2;
+}
+
+/* Typing Animation Styles */
+.typewrite {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+.typewrite > .wrap {
+    border-right: 0.08em solid #ffffff;
+    animation: blink 0.7s infinite;
+}
+
+/* Light mode adjustments for typing animation */
+body.light-mode .typewrite {
+    color: #1f2937;
+}
+
+body.light-mode .typewrite > .wrap {
+    border-right: 0.08em solid #1f2937;
+}
+
+@keyframes blink {
+    0% { border-color: transparent }
+    50% { border-color: #ffffff }
+    100% { border-color: transparent }
+}
+
+/* Light mode blink animation */
+body.light-mode .typewrite > .wrap {
+    animation: blinkLight 0.7s infinite;
+}
+
+@keyframes blinkLight {
+    0% { border-color: transparent }
+    50% { border-color: #1f2937 }
+    100% { border-color: transparent }
+}
+
+/* Responsive adjustments for typing animation */
+@media (max-width: 768px) {
+    .typewrite {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewrite {
+        font-size: 2rem;
+    }
 } 

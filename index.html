@@ -403,11 +403,19 @@
         <div class="container mx-auto text-center px-4 section-fade-in">
             <h2 class="section-title text-3xl font-bold text-white" data-translate="contact">Contactame</h2>
             <div class="max-w-2xl mx-auto">
-                <div class="flex justify-center space-x-4 mb-8">
-                    <a href="mailto:luciajulianapardini@outlook.com" class="contact-btn">
-                        <i class="fas fa-envelope"></i>
-                        <span data-translate="sendEmail">enviar email</span>
-                    </a>
+                <button id="emailButton" class="email-btn">
+                    <i class="fas fa-envelope"></i>
+                    <span data-translate="sendEmail">Enviar Email</span>
+                </button>
+                <div id="emailOptions" class="email-options hidden">
+                    <button class="email-option" id="openEmail">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-translate="openEmail">Abrir Email</span>
+                    </button>
+                    <button class="email-option" id="copyEmail">
+                        <i class="fas fa-copy"></i>
+                        <span data-translate="copyEmail">Copiar Email</span>
+                    </button>
                 </div>
             </div>
         </div>

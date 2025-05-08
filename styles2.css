@@ -1094,72 +1094,6 @@ body.light-mode .download-cv-btn:hover {
     background-color: #4B5563;
 }
 
-/* Contact Buttons */
-.contact-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    background-color: #374151;
-    color: #ffffff;
-    border-radius: 25px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    gap: 0.5rem;
-}
-
-.contact-btn:hover {
-    transform: translateY(-2px);
-    background-color: #4B5563;
-}
-
-.contact-btn i {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.contact-btn:hover i {
-    transform: translateY(1px);
-}
-
-/* Light mode adjustments */
-body.light-mode .contact-btn {
-    background-color: #374151;
-    color: #ffffff;
-}
-
-body.light-mode .contact-btn:hover {
-    background-color: #4B5563;
-}
-
-/* Scroll button styles */
-#scrollDownBtn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-#scrollDownBtn i {
-    transition: all 0.3s ease;
-}
-
-#scrollDownBtn:hover i {
-    transform: scale(1.2);
-}
-
-/* Light mode adjustments for scroll button */
-body.light-mode #scrollDownBtn {
-    color: #6b7280;
-}
-
-body.light-mode #scrollDownBtn:hover {
-    color: #1f2937;
-}
-
 /* Certificates Section */
 .certificates-section {
     position: relative;
@@ -1825,4 +1759,128 @@ body.light-mode .progress-wrap::after {
 
 body.light-mode .progress-wrap svg.progress-circle path {
     stroke: #1f2937;
+}
+
+/* Email Button Styles */
+.email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #374151;
+    color: #ffffff;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.email-btn:hover {
+    transform: translateY(-2px);
+    background-color: #4B5563;
+}
+
+.email-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.email-btn:hover i {
+    transform: translateY(1px);
+}
+
+/* Email Options Styles */
+.email-options {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    z-index: 50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.email-options.hidden {
+    display: none;
+}
+
+.email-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 0.25rem;
+}
+
+.email-option:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.email-option i {
+    font-size: 1rem;
+}
+
+/* Light mode adjustments */
+body.light-mode .email-btn {
+    background-color: #374151;
+    color: #ffffff;
+}
+
+body.light-mode .email-btn:hover {
+    background-color: #4B5563;
+}
+
+body.light-mode .email-options {
+    background-color: #ffffff;
+    border-color: rgba(31, 41, 55, 0.1);
+}
+
+body.light-mode .email-option {
+    color: #1f2937;
+}
+
+body.light-mode .email-option:hover {
+    background-color: rgba(31, 41, 55, 0.05);
+}
+
+/* Toast notification styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.light-mode .toast {
+    background-color: #374151;
+    color: white;
 }

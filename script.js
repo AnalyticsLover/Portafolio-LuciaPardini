@@ -64,7 +64,6 @@ const translations = {
         skills: "Skills and Competencies",
         projects: "Recent Projects",
         contact: "Contact Me",
-        sendEmail: "Send Email",
         downloadCV: "Download Resume",
         viewCode: "See the code",
         certificates: "Certificates",
@@ -89,6 +88,11 @@ const translations = {
         project5_title: "Sales Dashboard: Local Stores in Japan",
         project5_description: "Cleaning and analysis of data extracted from kaggle.com. Creation of a dashboard made with Python and Streamlit.",
         // Add all other translations here
+        sendEmail: "Send Email",
+        openEmail: "Open Email Client",
+        copyEmail: "Copy Email Address",
+        emailCopied: "Email copied to clipboard!",
+        copyFailed: "Failed to copy email"
     },
     es: {
         name: "Lucia Pardini",
@@ -100,7 +104,6 @@ const translations = {
         skills: "Aptitudes y Competencias",
         projects: "Proyectos Recientes",
         contact: "Contáctame",
-        sendEmail: "Enviar Email",
         downloadCV: "Descargar CV",
         viewCode: "Ver el código",
         certificates: "Certificados",
@@ -124,6 +127,11 @@ const translations = {
         // Project 5
         project5_description: "Limpieza y analisis de los datos extraidos de kaggle.com. Elaboracion de un dashboard realizado con pythony stramlit.",
         // Add all other translations here
+        sendEmail: "Enviar Email",
+        openEmail: "Abrir Cliente de Email",
+        copyEmail: "Copiar Dirección de Email",
+        emailCopied: "¡Email copiado al portapapeles!",
+        copyFailed: "Error al copiar el email"
     }
 };
 
@@ -355,39 +363,57 @@ darkModeToggle.addEventListener('click', toggleDarkMode);
 // languageToggle.addEventListener('click', toggleLanguage); // Temporarily disabled
 window.addEventListener('scroll', handleScrollAnimation);
 
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
+// Email button functionality
+const emailButton = document.getElementById('emailButton');
+const emailOptions = document.getElementById('emailOptions');
+const openEmailBtn = document.getElementById('openEmail');
+const copyEmailBtn = document.getElementById('copyEmail');
+const emailAddress = 'luciajulianapardini@outlook.com';
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Create mailto link with pre-filled information
-    const mailtoLink = `mailto:luciajulianapardini@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Reset form
-    contactForm.reset();
+// Create toast element
+const toast = document.createElement('div');
+toast.className = 'toast';
+document.body.appendChild(toast);
+
+// Show toast message
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+// Toggle email options
+emailButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    emailOptions.classList.toggle('hidden');
 });
 
-// Projects navigation
-const projectsWrapper = document.querySelector('.projects-wrapper');
-const prevButton = document.querySelector('.nav-prev');
-const nextButton = document.querySelector('.nav-next');
+// Close options when clicking outside
+document.addEventListener('click', (e) => {
+    if (!emailOptions.contains(e.target) && e.target !== emailButton) {
+        emailOptions.classList.add('hidden');
+    }
+});
 
-function updateNavigationButtons() {
-    const scrollLeft = projectsWrapper.scrollLeft;
-    const maxScroll = projectsWrapper.scrollWidth - projectsWrapper.clientWidth;
-    
-    prevButton.classList.toggle('hidden', scrollLeft <= 0);
-    nextButton.classList.toggle('hidden', scrollLeft >= maxScroll);
-}
+// Open email client
+openEmailBtn.addEventListener('click', () => {
+    window.location.href = `mailto:${emailAddress}`;
+    emailOptions.classList.add('hidden');
+});
+
+// Copy email to clipboard
+copyEmailBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(emailAddress).then(() => {
+        showToast(translations[currentLang]['emailCopied'] || 'Email copied to clipboard!');
+        emailOptions.classList.add('hidden');
+    }).catch(() => {
+        showToast(translations[currentLang]['copyFailed'] || 'Failed to copy email');
+    });
+});
+
+
 
 function scrollProjects(direction) {
     const cardWidth = projectsWrapper.querySelector('.project-card').offsetWidth;
@@ -399,34 +425,13 @@ function scrollProjects(direction) {
     });
 }
 
-prevButton.addEventListener('click', () => scrollProjects('prev'));
-nextButton.addEventListener('click', () => scrollProjects('next'));
-projectsWrapper.addEventListener('scroll', updateNavigationButtons);
 
-// Initialize navigation buttons on load
-window.addEventListener('load', updateNavigationButtons);
 
 // Hide/show scroll button based on scroll position
 const heroSection = document.querySelector('section:first-child');
 let lastScrollPosition = 0;
 
-function handleScroll() {
-    const currentScrollPosition = window.scrollY;
-    const heroSectionBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    
-    // Add/remove hidden class based on scroll position
-    if (currentScrollPosition > heroSectionBottom * 0.5) {
-        scrollDownBtn.classList.add('hidden');
-    } else {
-        scrollDownBtn.classList.remove('hidden');
-    }
-    
-    // Update last scroll position
-    lastScrollPosition = currentScrollPosition;
-}
 
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
 
-// Initialize scroll button visibility
-handleScroll();
+
+

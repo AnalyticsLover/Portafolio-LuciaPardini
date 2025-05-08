@@ -208,6 +208,53 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Finally set up scroll animations
     handleScrollAnimation();
+
+    // Scroll to top button functionality
+    const progressWrap = document.querySelector('.progress-wrap');
+    const progressPath = document.querySelector('.progress-wrap path');
+    
+    if (progressPath) {
+        const pathLength = progressPath.getTotalLength();
+        
+        // Set initial styles
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+
+        function updateProgress() {
+            const scroll = window.scrollY;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
+        }
+
+        // Initial update
+        updateProgress();
+
+        // Update on scroll
+        window.addEventListener('scroll', () => {
+            updateProgress();
+            
+            // Show/hide button based on scroll position
+            if (window.scrollY > 50) {
+                progressWrap.classList.add('active-progress');
+            } else {
+                progressWrap.classList.remove('active-progress');
+            }
+        });
+
+        // Click handler
+        progressWrap.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return false;
+        });
+    }
 });
 
 // Dark mode state

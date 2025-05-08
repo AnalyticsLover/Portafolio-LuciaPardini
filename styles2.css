@@ -149,76 +149,6 @@ h1, h2, h3, .hero-title {
     background-color: #4b5563;
 }
 
-/* Language Switch - temporarily disabled
-.language-switch {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.language-switch-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #1f2937;
-    border-radius: 9999px;
-    padding: 0.5rem 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    min-width: 90px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.language-switch-btn::before {
-    display: none;
-}
-
-.language-switch-btn[data-lang="en"] .switch-label:last-child,
-.language-switch-btn[data-lang="es"] .switch-label:first-child {
-    color: #ffffff;
-    font-weight: 600;
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-body.light-mode .language-switch-btn {
-    background-color: #f3f4f6;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-body.light-mode .switch-label {
-    color: #6b7280;
-    opacity: 0.7;
-}
-
-body.light-mode .language-switch-btn[data-lang="en"] .switch-label:last-child,
-body.light-mode .language-switch-btn[data-lang="es"] .switch-label:first-child {
-    color: #1f2937;
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.language-switch-btn:hover {
-    background-color: #2d3748;
-}
-
-body.light-mode .language-switch-btn:hover {
-    background-color: #e5e7eb;
-}
-
-@media (max-width: 768px) {
-    .language-switch-btn {
-        min-width: 85px;
-        padding: 0.4rem 1.2rem;
-    }
-
-    .switch-label {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.8rem;
-    }
-}
-*/
 
 /* Skill Items */
 .skill-item {
@@ -1782,3 +1712,117 @@ body.light-mode .language-option:hover {
     color: #3b82f6;
     font-weight: 500;
 } 
+
+/* Add the floating animation keyframes */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Progress Wrap (Scroll to Top Button) */
+.progress-wrap {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    height: 56px;
+    width: 56px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.2);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 200ms linear;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: float 2s ease-in-out infinite;
+}
+
+.progress-wrap::after {
+    position: absolute;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f0aa';
+    text-align: center;
+    line-height: 56px;
+    font-size: 20px;
+    color: #fff;
+    left: 0;
+    top: 0;
+    height: 56px;
+    width: 56px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+    transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+    opacity: 0;
+}
+
+.progress-wrap::before {
+    position: absolute;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f0aa';
+    text-align: center;
+    line-height: 56px;
+    font-size: 20px;
+    opacity: 0;
+    background-image: linear-gradient(298deg, #da2c4d, #f8ab37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    left: 0;
+    top: 0;
+    height: 56px;
+    width: 56px;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+    transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+    opacity: 1;
+}
+
+.progress-wrap svg path { 
+    fill: none; 
+}
+
+.progress-wrap svg.progress-circle path {
+    stroke: #fff;
+    stroke-width: 4;
+    box-sizing: border-box;
+    transition: all 200ms linear;
+}
+
+/* Light mode adjustments */
+body.light-mode .progress-wrap {
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body.light-mode .progress-wrap::after {
+    color: #1f2937;
+}
+
+body.light-mode .progress-wrap svg.progress-circle path {
+    stroke: #1f2937;
+}

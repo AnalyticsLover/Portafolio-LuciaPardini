@@ -92,7 +92,9 @@ const translations = {
         openEmail: "Open Email Client",
         copyEmail: "Copy Email Address",
         emailCopied: "Email copied to clipboard!",
-        copyFailed: "Failed to copy email"
+        copyFailed: "Failed to copy email",
+        telegram: "Telegram",
+        whatsapp: "WhatsApp"
     },
     es: {
         name: "Lucia Pardini",
@@ -131,7 +133,9 @@ const translations = {
         openEmail: "Abrir Cliente de Email",
         copyEmail: "Copiar Dirección de Email",
         emailCopied: "¡Email copiado al portapapeles!",
-        copyFailed: "Error al copiar el email"
+        copyFailed: "Error al copiar el email",
+        telegram: "Telegram",
+        whatsapp: "WhatsApp"
     }
 };
 
